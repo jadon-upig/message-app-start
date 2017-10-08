@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' * http://localhost:3000 http://localhost:8080 https://mobilityccdev.voith-port.com ws://localhost:3000 http://127.0.0.1:5984 'unsafe-inline' data:   gap: https://ssl.gstatic.com 'unsafe-eval'; connect-src * ; img-src * blob: data: hist; style-src 'self' 'unsafe-inline'; media-src *">
+	<meta charset="utf-8">
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Framework7 iOS</title>
+	<link rel="stylesheet" href="css/my-app.css">
+	<link rel="stylesheet" href="css/material_icons.css">
+	<link rel="stylesheet" href="css/ios_icons.css">
+</head>
+<body class="layout-white" style="visibility:hidden;">
+	<!-- Status bar overlay for full screen mode (PhoneGap) -->
+	<div class="statusbar-overlay" ></div>
+	<!-- Panels overlay-->
+	<div class="panel-overlay"></div>
+	<!-- Left panel with reveal effect-->
+	<div class="panel panel-left panel-cover layout-white">
+		<div class="close-x"> <a href="#" class="close-panel icon-only"> <i class="f7-icons color-blue ">close</i> </a> </div>
+		<div class="content-block-title">Menu</div>
+		<div class="content-block">
+			<p>This is a side panel. Put the settings, login, about and help infromation for your app here</p>
+		</div>
+		<div class="list-block">
+			<ul class="main-menu-list">
+				<li>
+					<a href="login.html" class="item-link close-panel">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title">User Id</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="about.html" class="item-link close-panel">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title">About</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="content-block-title">Temporary (Block Title)</div>
+			<div class="list-block">
+				<ul class="main-menu-list">
+					<li>
+						<a href="#" id="destroy" class=" item-link close-panel">
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title">Destroy DB</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Views -->
+	<div class="views" >
+		<!-- Your main view, should have "view-main" class -->
+		<div class="view view-main">
+			<!-- Top Navbar-->
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left"> <a href="#" class="open-panel link icon-only"> <i class="f7-icons text-blue-voith">bars</i> </a>
+					</div>
+					<div class="center sliding">Message App</div>
+					<div class="right"><em class="f7-icons logo-size">v_logo</em></div>
+				</div>
+			</div>
+			<!-- Pages container-->
+			<div class="pages navbar-through toolbar-through">
+				<!-- Page, "data-page" contains page name -->
+				<div data-page="index" class="page bg-white">
+					<!--Message Bar -->
+					<div class="toolbar messagebar">
+						<div class="toolbar-inner">
+							<textarea placeholder="Message"></textarea><a href="#" class="link send-message">Send</a>
+						</div>
+					</div>
+					<!-- Scrollable page content -->
+					<div class="page-content messages-content">
+						<div class="messages"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/framework7.min.js"></script>
+	<script>
+      (function () {
+        if (Framework7.prototype.device.android) {
+              Dom7('head').append(
+                  '<link rel="stylesheet" href="css/framework7.material.css">' +
+                  '<link rel="stylesheet" href="css/framework7.material.colors.css">'
+              );
+          }
+          else {
+              Dom7('head').append(
+                  '<link rel="stylesheet" href="css/framework7.ios.css">' +
+                  '<link rel="stylesheet" href="css/framework7.ios.colors.css">'
+              );
+          }
+
+      })();
+  </script>
+	<script type="text/javascript" src="js/setup.js"></script>
+	<script type="text/javascript" src="js/my-app.js"></script>
+	<script type="text/javascript" src="js/eventListeners.js"></script>
+	<script type="text/javascript" src="js/pouchdb-6.3.4.min.js"></script>
+	<!--<script type="text/javascript" src="js/pouchdb.cordova-sqlite.js"></script>-->
+	<script type="text/javascript" src="js/pouchdb.authentication.js"></script>
+	<script type="text/javascript" src="js/pouchdb.pouchdb-find.min.js"></script>
+	<script type="text/javascript" src="js/pouchdb.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+
+#Folders#
+#git rm -r --cached <folder> when you have already commited a folder#
+######################
+platforms/
+node_modules/
+plugins/
+
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode
