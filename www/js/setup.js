@@ -4,7 +4,7 @@
 //----------------------------------------------------------------------------------
 const isAndroid = Framework7.prototype.device.android === true;
 const isIos = Framework7.prototype.device.ios === true;
-const appRunningStatus = "beta"; //Types "prod" "beta" "dev" "dev-local"
+const appRunningStatus = "dev-local"; //Types "prod" "beta" "dev" "dev-local"
 const alertName = "Messages App"; //name of the app and modal Title
 var localDB; //This is the local data base
 const messageApp ={};//Information about the user and the messages
@@ -60,7 +60,7 @@ $$(document).on('deviceready', function() {
   console.log("Device is ready!");
   //give some time for the correct design to load
   $$('body').css('visibility','visible');
-  getAppUserInfo();
+  //getAppUserInfo();
 });
 
 //----------------------------------------------------------------------------------

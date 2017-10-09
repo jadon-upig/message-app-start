@@ -23,12 +23,12 @@
 		<div class="close-x"> <a href="#" class="close-panel icon-only"> <i class="f7-icons color-blue ">close</i> </a> </div>
 		<div class="content-block-title">Menu</div>
 		<div class="content-block">
-			<p>This is a side panel. Put the settings, login, about and help infromation for your app here</p>
+			<p>This is a side panel. Put the settings, user_id, about and help infromation for your app here</p>
 		</div>
 		<div class="list-block">
 			<ul class="main-menu-list">
 				<li>
-					<a href="login.html" class="item-link close-panel">
+					<a href="user_id.html" class="item-link close-panel">
 						<div class="item-content">
 							<div class="item-inner">
 								<div class="item-title">User Id</div>
@@ -37,10 +37,10 @@
 					</a>
 				</li>
 				<li>
-					<a href="about.html" class="item-link close-panel">
+					<a href="v_list.html" class="item-link close-panel">
 						<div class="item-content">
 							<div class="item-inner">
-								<div class="item-title">About</div>
+								<div class="item-title">Virtual List</div>
 							</div>
 						</div>
 					</a>
@@ -79,16 +79,15 @@
 			<div class="pages navbar-through toolbar-through">
 				<!-- Page, "data-page" contains page name -->
 				<div data-page="index" class="page bg-white">
-					<!--Message Bar -->
-					<div class="toolbar messagebar">
-						<div class="toolbar-inner">
-							<textarea placeholder="Message"></textarea><a href="#" class="link send-message">Send</a>
-						</div>
-					</div>
-					<!-- Scrollable page content -->
-					<div class="page-content messages-content">
-						<div class="messages"></div>
-					</div>
+
+<!-- **********Place message bar below d-1 *****************-->
+
+
+
+<!-- **********Place messages content below d-2 *********** -->
+
+
+
 				</div>
 			</div>
 		</div>
@@ -113,13 +112,13 @@
       })();
   </script>
 	<script type="text/javascript" src="js/setup.js"></script>
-	<script type="text/javascript" src="js/my-app.js"></script>
-	<script type="text/javascript" src="js/eventListeners.js"></script>
+	<script type="text/javascript" src="js/messages.js"></script>
+	<script type="text/javascript" src="js/btns.js"></script>
 	<script type="text/javascript" src="js/pouchdb-6.3.4.min.js"></script>
-	<!--<script type="text/javascript" src="js/pouchdb.cordova-sqlite.js"></script>-->
 	<script type="text/javascript" src="js/pouchdb.authentication.js"></script>
 	<script type="text/javascript" src="js/pouchdb.pouchdb-find.min.js"></script>
 	<script type="text/javascript" src="js/pouchdb.js"></script>
+	<script type="text/javascript" src="js/v_list.js"></script>
 </body>
 
 </html>

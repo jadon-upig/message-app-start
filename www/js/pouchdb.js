@@ -1,5 +1,48 @@
 
 //----------------------------------------------------------------------------------
+//      Pouch Find. Find and return a document
+//----------------------------------------------------------------------------------
+var fnPouchFind = function() {
+  localDB.createIndex({
+      index: {
+        fields: ["type", "time"]
+      }
+    }).then(function() {
+      localDB.find({
+        selector: {
+          $and: [{type: {$exists: true}},
+            {type: {$eq: "message"}},
+            {time: {$exists: true}}]},
+        sort: [{'type': 'asc'}, {'time': 'desc'}]
+      }).then(function(results) {
+        //console.log("pouch.js- :" + JSON.stringify(results.docs));
+        results.docs.forEach(function(data) {
+          //console.log("Time: " + data.time);
+          loadMessages(data._id);
+        });
+      }).catch(function(err) {
+        console.log("pouch.js- Error on find: " + err);
+      });
+    })
+    .catch(function(err) {
+      console.log("pouch.js- Error createIndex: " + err);
+    });
+
+};
+
+//----------------------------------------------------------------------------------
+//      Get info on database
+//----------------------------------------------------------------------------------
+var pouchInfo = function() {
+  localDB.info().then(function(info) {
+    console.log(info);
+    fnPouchFind();
+  }).catch(function(err) {
+    console.log(err);
+  });
+};
+
+//----------------------------------------------------------------------------------
 //      Setting up local and remote database
 //----------------------------------------------------------------------------------
 var setupLocalDB = function() {
@@ -48,7 +91,7 @@ var setupLocalDB = function() {
     live: true,
     retry: true
    }).on('change', function(change) {
-    console.log("yo, we got an");
+    console.log("yo, we got an change");
     console.log(change);
     var dt1 = new Date(change.change.start_time);
     var utcDate = dt1.toUTCString();
@@ -62,47 +105,4 @@ var setupLocalDB = function() {
   });
  }
   pouchInfo();
-};
-
-//----------------------------------------------------------------------------------
-//      Pouch Find. Index and find some data
-//----------------------------------------------------------------------------------
-var fnPouchFind = function() {
-  localDB.createIndex({
-      index: {
-        fields: ["type", "time"]
-      }
-    }).then(function() {
-      localDB.find({
-        selector: {
-          $and: [{type: {$exists: true}},
-            {type: {$eq: "message"}},
-            {time: {$exists: true}}]},
-        sort: [{'type': 'asc'}, {'time': 'desc'}]
-      }).then(function(results) {
-        //console.log("pouch.js- :" + JSON.stringify(results.docs));
-        results.docs.forEach(function(data) {
-          //console.log("Time: " + data.time);
-          loadMessages(data._id);
-        });
-      }).catch(function(err) {
-        console.log("pouch.js- Error on find: " + err);
-      });
-    })
-    .catch(function(err) {
-      console.log("pouch.js- Error createIndex: " + err);
-    });
-
-};
-
-//----------------------------------------------------------------------------------
-//      Get info on database
-//----------------------------------------------------------------------------------
-var pouchInfo = function() {
-  localDB.info().then(function(info) {
-    console.log(info);
-    fnPouchFind();
-  }).catch(function(err) {
-    console.log(err);
-  });
 };
