@@ -60,7 +60,7 @@ $$(document).on('deviceready', function() {
   console.log("Device is ready!");
   //give some time for the correct design to load
   $$('body').css('visibility','visible');
-  //getAppUserInfo();
+  getAppUserInfo();
 });
 
 //----------------------------------------------------------------------------------
