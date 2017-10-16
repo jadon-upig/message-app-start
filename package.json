@@ -24,8 +24,7 @@
             "cordova-plugin-network-information": {},
             "cordova-plugin-secure-storage": {},
             "cordova-plugin-splashscreen": {},
-            "cordova-plugin-whitelist": {},
-            "cordova-plugin-wkwebview-engine": {}
+            "cordova-plugin-whitelist": {}
         }
     },
     "dependencies": {
