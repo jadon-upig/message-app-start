@@ -116,6 +116,4 @@
     <plugin name="cordova-plugin-secure-storage" spec="2.6.3" />
     <plugin name="cordova-plugin-splashscreen" spec="3.2.1" />
     <plugin name="cordova-plugin-whitelist" spec="1.2.1" />
-  
-
 </widget>

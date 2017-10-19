@@ -1,16 +1,16 @@
 
 //----------------------------------------------------------------------------------
-//       Global vars and determine theme depending on device
+//       Globals / Theme depending on device
 //----------------------------------------------------------------------------------
 const isAndroid = Framework7.prototype.device.android === true;
 const isIos = Framework7.prototype.device.ios === true;
-const appRunningStatus = "dev-local"; //Types "prod" "beta" "dev" "dev-local"
+const appRunningStatus = "dev-local"; //Types "beta" "dev-local"
 const alertName = "Messages App"; //name of the app and modal Title
 var localDB; //This is the local data base
-const messageApp ={};//Information about the user and the messages
+const messageApp = {};//Information about the user and the messages
 var username = "<username>";
 var password = "<password>";
-var url = "https:// <server url>";
+const url = "https:// <server url>";
 
 //----------------------------------------------------------------------------------
 //       Set Template7 global devices flags.
