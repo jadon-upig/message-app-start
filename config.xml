@@ -117,5 +117,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="3.2.1" />
     <plugin name="cordova-plugin-whitelist" spec="1.2.1" />
     <!--<plugin spec="https://4d41ed4f38ee4148b4ccbdc852381b4ab7dfe401@github.com/VoithITSolution/InAppAuth.git#0.1.37" source="git" />-->
-    <plugin spec="https://github.com/VoithITSolution/InAppAuth.git" source="git" />
+   <gap:plugin name="com.voith.mobile.phonegap.plugin.inappauth" version="0.1.33"/>
+
 </widget>
